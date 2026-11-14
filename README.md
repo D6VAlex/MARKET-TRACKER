@@ -7,6 +7,14 @@ all on a custom glassmorphism UI over a user-supplied background image.
 
 **No fabricated prices. No single-provider dependency. No silent failures.**
 
+<img width="1919" height="1031" alt="Screenshot 2026-11-14 063054" src="https://github.com/user-attachments/assets/4e69fc28-8eb5-4b38-98ef-4cb6b87f91e7" />
+
+<img width="1919" height="1027" alt="Screenshot 2026-11-14 063109" src="https://github.com/user-attachments/assets/bd2f664c-f788-4155-8b22-5b8111548492" />
+
+<img width="1919" height="1031" alt="Screenshot 2026-11-14 063118" src="https://github.com/user-attachments/assets/5e1de6af-2348-4b88-a5df-9f3611f2b15c" />
+
+<img width="1919" height="1031" alt="Screenshot 2026-11-14 063132" src="https://github.com/user-attachments/assets/4941a06b-b500-4057-9613-0f5f57d42a94" />
+
 ---
 
 ## Table of Contents
