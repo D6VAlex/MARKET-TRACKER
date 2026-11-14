@@ -398,56 +398,55 @@ be read-only).
 
 ```
 market_tracker/
-├── main.py                     entry point
-├── config.py                   all tunables + env/JSON overrides
-├── models.py                   Pydantic domain models (Quote, Aggregated…)
+├── main.py                     
+├── config.py                 
+├── models.py                   
 ├── requirements.txt
-├── MarketTracker.spec          PyInstaller spec
 ├── assets/
-│   └── background.jpg          user-supplied app background
+│   └── background.jpg        
 ├── core/
-│   ├── application.py          bootstrap: Qt main thread + pipeline thread
-│   ├── scheduler.py            monotonic fixed-grid scheduler
-│   ├── event_manager.py        thread-safe asyncio→Qt signal bridge
-│   └── data_manager.py         orchestration, jobs, snapshots, status
+│   ├── application.py       
+│   ├── scheduler.py          
+│   ├── event_manager.py     
+│   └── data_manager.py    
 ├── providers/
-│   ├── base_provider.py        breaker+health-wrapped provider ABC
-│   ├── crypto_providers.py     Binance / CoinGecko / Coinbase / Kraken
-│   ├── forex_providers.py      Yahoo / ER-API / Frankfurter
-│   ├── stock_providers.py      Yahoo equities (query1 + query2 mirror)
-│   ├── google_finance.py       Google Finance quote-page scraper (v8)
-│   ├── discovery.py            market-cap board + curated floor set
-│   └── websocket_manager.py    Binance combined-stream WS client
+│   ├── base_provider.py      
+│   ├── crypto_providers.py     
+│   ├── forex_providers.py      
+│   ├── stock_providers.py     
+│   ├── google_finance.py     
+│   ├── discovery.py           
+│   └── websocket_manager.py    
 ├── infrastructure/
-│   ├── cache.py                multi-provider quote cache
-│   ├── database.py             SQLAlchemy/SQLite history + snapshots
-│   ├── connection_manager.py   pooled aiohttp client, error mapping
-│   ├── retry_manager.py        backoff + jitter + Retry-After
-│   ├── circuit_breaker.py      closed/open/half-open
-│   └── health_monitor.py       per-provider stats, EWMA reliability
+│   ├── cache.py               
+│   ├── database.py             
+│   ├── connection_manager.py
+│   ├── retry_manager.py        
+│   ├── circuit_breaker.py     
+│   └── health_monitor.py      
 ├── services/
-│   ├── crypto_service.py       discovery + quote chain + WS ingestion
-│   ├── forex_service.py        forex chain (37 pairs)
-│   ├── stocks_service.py       global equity board (25 blue chips)
-│   ├── validation_service.py   the validation gate
-│   └── price_aggregator.py     median consensus, disagreement, badges
+│   ├── crypto_service.py       
+│   ├── forex_service.py    
+│   ├── stocks_service.py    
+│   ├── validation_service.py  
+│   └── price_aggregator.py 
 ├── ui/
-│   ├── main_window.py          nav, pages, status, toasts, shortcuts
-│   ├── all_markets_page.py    All Markets combined tab (v8)
-│   ├── market_window.py       Detachable per-market windows (v8)
-│   ├── market_page.py          table + search + subtitle
-│   ├── crypto_forex_pages.py   thin asset-class wrappers
-│   ├── components.py           badges, flash labels, table model, panel
-│   └── theme.py                dark palette + QSS
+│   ├── main_window.py        
+│   ├── all_markets_page.py   
+│   ├── market_window.py     
+│   ├── market_page.py         
+│   ├── crypto_forex_pages.py 
+│   ├── components.py       
+│   └── theme.py               
 ├── utils/
-│   ├── logger.py               structured logging + connection tracker
-│   ├── exceptions.py           categorized exception taxonomy
-│   └── validators.py           pure numeric/timestamp validators
+│   ├── logger.py              
+│   ├── exceptions.py          
+│   └── validators.py         
 ├── tools/
-│   ├── provider_smoke_test.py  live per-provider verification
-│   └── soak_test.py            long-run stability measurement
+│   ├── provider_smoke_test.py 
+│   └── soak_test.py            
 └── tests/
-    ├── conftest.py             fakes (scriptable HTTP, factories)
+    ├── conftest.py            
     ├── test_providers.py
     ├── test_validation.py
     ├── test_recovery.py
