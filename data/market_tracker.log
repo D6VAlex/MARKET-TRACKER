@@ -1,0 +1,87 @@
+2026-11-14 06:24:58.763 | INFO     | market_tracker               | === Market Tracker v1.0.0 starting ===
+2026-11-14 06:24:58.823 | INFO     | market_tracker.db            | database ready at C:\Users\Alex\Downloads\MarketTracker-v8-ready\market-tracker-v8-final\market_tracker\data\market_tracker.db | category=database state=ready
+2026-11-14 06:24:58.839 | INFO     | market_tracker.http          | HTTP session created (pool=20) | state=session_created
+2026-11-14 06:24:59.357 | WARNING  | market_tracker.health        | provider failure: kraken: [malformed] provider=kraken missing 'result' in Kraken response | category=malformed provider=kraken state=failed
+2026-11-14 06:24:59.359 | WARNING  | market_tracker.crypto_service | crypto provider kraken failed: [malformed] provider=kraken missing 'result' in Kraken response | category=failover provider=kraken
+2026-11-14 06:24:59.480 | INFO     | market_tracker.provider.coinbase | coinbase: USDC-USD not listed (404)
+2026-11-14 06:24:59.480 | INFO     | market_tracker.provider.coinbase | coinbase: backing off symbol USDC for 40 cycles
+2026-11-14 06:24:59.563 | INFO     | market_tracker.provider.coinbase | coinbase: TRX-USD not listed (404)
+2026-11-14 06:24:59.563 | INFO     | market_tracker.provider.coinbase | coinbase: backing off symbol TRX for 40 cycles
+2026-11-14 06:24:59.616 | INFO     | market_tracker.provider.coinbase | coinbase: FIGR_HELOC-USD not listed (404)
+2026-11-14 06:24:59.617 | INFO     | market_tracker.provider.coinbase | coinbase: backing off symbol FIGR_HELOC for 40 cycles
+2026-11-14 06:24:59.724 | WARNING  | market_tracker.provider.binance | batch 400 — falling back to per-symbol fetch | category=malformed provider=binance
+2026-11-14 06:24:59.731 | INFO     | market_tracker.provider.coinbase | coinbase: XMR-USD not listed (404)
+2026-11-14 06:24:59.731 | INFO     | market_tracker.provider.coinbase | coinbase: backing off symbol XMR for 40 cycles
+2026-11-14 06:24:59.791 | INFO     | market_tracker.provider.coinbase | coinbase: WBT-USD not listed (404)
+2026-11-14 06:24:59.791 | INFO     | market_tracker.provider.coinbase | coinbase: backing off symbol WBT for 40 cycles
+2026-11-14 06:24:59.867 | INFO     | market_tracker.provider.coinbase | coinbase: LEO-USD not listed (404)
+2026-11-14 06:24:59.868 | INFO     | market_tracker.provider.coinbase | coinbase: backing off symbol LEO for 40 cycles
+2026-11-14 06:24:59.945 | INFO     | market_tracker.provider.coinbase | coinbase: USDE-USD not listed (404)
+2026-11-14 06:24:59.946 | INFO     | market_tracker.provider.coinbase | coinbase: backing off symbol USDE for 40 cycles
+2026-11-14 06:24:59.974 | WARNING  | market_tracker.provider.coinbase | coinbase DAI-USD failed: [http] provider=coinbase client error 400
+2026-11-14 06:24:59.994 | WARNING  | market_tracker.validation    | rejected quote USDS from coinbase: [stale] provider=coinbase source_ts 2026-11-14T14:07:25.089212+00:00 is 1055s old (max 120s) for USDS | category=stale provider=coinbase
+2026-11-14 06:25:04.977 | WARNING  | market_tracker.health        | provider failure: binance: 1 validation error for Quote
+price
+  Input should be greater than 0 [type=greater_than, input_value=0.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.14/v/greater_than | category=malformed provider=binance state=failed
+2026-11-14 06:25:04.978 | WARNING  | market_tracker.crypto_service | crypto provider binance failed: 1 validation error for Quote
+price
+  Input should be greater than 0 [type=greater_than, input_value=0.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.14/v/greater_than | category=failover provider=binance
+2026-11-14 06:25:10.886 | WARNING  | market_tracker.provider.google_finance | google_finance rejected WMT:NYSE: [malformed] provider=google_finance no quote payload for WMT:NYSE
+2026-11-14 06:25:13.512 | INFO     | market_tracker.ws            | websocket manager started for 25 symbols | category=websocket provider=binance state=starting
+2026-11-14 06:25:13.512 | INFO     | market_tracker.scheduler     | scheduler started (6 jobs: crypto_rest@30s, forex_rest@30s, stocks_rest@20s, discovery@300s, aggregator@1s, housekeeping@60s)
+2026-11-14 06:25:13.513 | INFO     | market_tracker.health        | websocket binance -> connecting | category=websocket provider=binance state=connecting
+2026-11-14 06:25:13.632 | WARNING  | market_tracker.breaker       | circuit OPEN (4 consecutive failures) — calls suppressed for 30s | provider=kraken state=open
+2026-11-14 06:25:13.633 | WARNING  | market_tracker.health        | provider failure: kraken: [malformed] provider=kraken missing 'result' in Kraken response | category=malformed provider=kraken state=failed
+2026-11-14 06:25:13.633 | WARNING  | market_tracker.crypto_service | crypto provider kraken failed: [malformed] provider=kraken missing 'result' in Kraken response | category=failover provider=kraken
+2026-11-14 06:25:13.797 | WARNING  | market_tracker.provider.binance | batch 400 — falling back to per-symbol fetch | category=malformed provider=binance
+2026-11-14 06:25:13.902 | WARNING  | market_tracker.provider.coinbase | coinbase DAI-USD failed: [http] provider=coinbase client error 400
+2026-11-14 06:25:13.943 | WARNING  | market_tracker.validation    | rejected quote USDS from coinbase: [stale] provider=coinbase source_ts 2026-11-14T14:07:25.089212+00:00 is 1069s old (max 120s) for USDS | category=stale provider=coinbase
+2026-11-14 06:25:14.295 | INFO     | market_tracker.health        | websocket binance -> open | category=websocket provider=binance state=open
+2026-11-14 06:25:14.295 | INFO     | market_tracker.ws            | websocket OPEN (25 streams) | category=websocket provider=binance state=open
+2026-11-14 06:25:14.976 | WARNING  | market_tracker.provider.google_finance | google_finance rejected WMT:NYSE: [malformed] provider=google_finance no quote payload for WMT:NYSE
+2026-11-14 06:25:19.110 | WARNING  | market_tracker.breaker       | circuit OPEN (4 consecutive failures) — calls suppressed for 30s | provider=binance state=open
+2026-11-14 06:25:19.111 | WARNING  | market_tracker.health        | provider failure: binance: 1 validation error for Quote
+price
+  Input should be greater than 0 [type=greater_than, input_value=0.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.14/v/greater_than | category=malformed provider=binance state=failed
+2026-11-14 06:25:19.112 | WARNING  | market_tracker.crypto_service | crypto provider binance failed: 1 validation error for Quote
+price
+  Input should be greater than 0 [type=greater_than, input_value=0.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.14/v/greater_than | category=failover provider=binance
+2026-11-14 06:25:35.129 | WARNING  | market_tracker.provider.google_finance | google_finance rejected WMT:NYSE: [malformed] provider=google_finance no quote payload for WMT:NYSE
+2026-11-14 06:25:35.129 | INFO     | market_tracker.provider.google_finance | google_finance: backing off symbol WMT for 12 cycles
+2026-11-14 06:25:43.576 | WARNING  | market_tracker.health        | provider failure: binance: [circuit_open] provider=binance circuit open for binance; retry in 6s | category=circuit_open provider=binance state=failed
+2026-11-14 06:25:43.576 | WARNING  | market_tracker.crypto_service | crypto provider binance failed: [circuit_open] provider=binance circuit open for binance; retry in 6s | category=failover provider=binance
+2026-11-14 06:25:43.576 | WARNING  | market_tracker.health        | provider failure: kraken: [circuit_open] provider=kraken circuit open for kraken; retry in 0s | category=circuit_open provider=kraken state=failed
+2026-11-14 06:25:43.576 | WARNING  | market_tracker.crypto_service | crypto provider kraken failed: [circuit_open] provider=kraken circuit open for kraken; retry in 0s | category=failover provider=kraken
+2026-11-14 06:25:44.049 | WARNING  | market_tracker.provider.coinbase | coinbase DAI-USD failed: [http] provider=coinbase client error 400
+2026-11-14 06:25:44.050 | INFO     | market_tracker.provider.coinbase | coinbase: backing off symbol DAI for 12 cycles
+2026-11-14 06:25:44.086 | WARNING  | market_tracker.validation    | rejected quote USDS from coinbase: [stale] provider=coinbase source_ts 2026-11-14T14:07:25.089212+00:00 is 1099s old (max 120s) for USDS | category=stale provider=coinbase
+2026-11-14 06:25:44.665 | INFO     | market_tracker.breaker       | circuit half-open, probing | provider=kraken state=half_open
+2026-11-14 06:25:49.569 | INFO     | market_tracker.breaker       | circuit half-open, probing | provider=binance state=half_open
+2026-11-14 06:26:13.874 | WARNING  | market_tracker.breaker       | circuit OPEN (5 consecutive failures) — calls suppressed for 30s | provider=kraken state=open
+2026-11-14 06:26:13.874 | WARNING  | market_tracker.health        | provider failure: kraken: [malformed] provider=kraken missing 'result' in Kraken response | category=malformed provider=kraken state=failed
+2026-11-14 06:26:13.874 | WARNING  | market_tracker.crypto_service | crypto provider kraken failed: [malformed] provider=kraken missing 'result' in Kraken response | category=failover provider=kraken
+2026-11-14 06:26:14.094 | WARNING  | market_tracker.provider.binance | batch 400 — falling back to per-symbol fetch | category=malformed provider=binance
+2026-11-14 06:26:14.317 | WARNING  | market_tracker.validation    | rejected quote USDS from coinbase: [stale] provider=coinbase source_ts 2026-11-14T14:07:25.089212+00:00 is 1129s old (max 120s) for USDS | category=stale provider=coinbase
+2026-11-14 06:26:19.572 | WARNING  | market_tracker.breaker       | circuit OPEN (5 consecutive failures) — calls suppressed for 30s | provider=binance state=open
+2026-11-14 06:26:19.573 | WARNING  | market_tracker.health        | provider failure: binance: 1 validation error for Quote
+price
+  Input should be greater than 0 [type=greater_than, input_value=0.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.14/v/greater_than | category=malformed provider=binance state=failed
+2026-11-14 06:26:19.574 | WARNING  | market_tracker.crypto_service | crypto provider binance failed: 1 validation error for Quote
+price
+  Input should be greater than 0 [type=greater_than, input_value=0.0, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.14/v/greater_than | category=failover provider=binance
+2026-11-14 06:26:43.574 | WARNING  | market_tracker.health        | provider failure: binance: [circuit_open] provider=binance circuit open for binance; retry in 6s | category=circuit_open provider=binance state=failed
+2026-11-14 06:26:43.584 | WARNING  | market_tracker.crypto_service | crypto provider binance failed: [circuit_open] provider=binance circuit open for binance; retry in 6s | category=failover provider=binance
+2026-11-14 06:26:43.584 | WARNING  | market_tracker.health        | provider failure: kraken: [circuit_open] provider=kraken circuit open for kraken; retry in 0s | category=circuit_open provider=kraken state=failed
+2026-11-14 06:26:43.584 | WARNING  | market_tracker.crypto_service | crypto provider kraken failed: [circuit_open] provider=kraken circuit open for kraken; retry in 0s | category=failover provider=kraken
+2026-11-14 06:26:44.597 | INFO     | market_tracker.breaker       | circuit half-open, probing | provider=kraken state=half_open
+2026-11-14 06:26:49.602 | INFO     | market_tracker.breaker       | circuit half-open, probing | provider=binance state=half_open
+2026-11-14 06:26:59.974 | INFO     | market_tracker.app           | shutdown requested
+2026-11-14 06:27:00.004 | INFO     | market_tracker.app           | shutdown requested
+2026-11-14 06:27:00.354 | INFO     | market_tracker.health        | websocket binance -> closed | category=websocket provider=binance state=closed
+2026-11-14 06:27:00.417 | INFO     | market_tracker.app           | === Market Tracker exited (code 0) ===

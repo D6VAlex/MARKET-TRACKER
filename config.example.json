@@ -1,0 +1,32 @@
+{
+  "network": {
+    "request_timeout": 8.0,
+    "connect_timeout": 5.0,
+    "ws_ping_interval": 20.0,
+    "pool_size": 20,
+    "max_retries": 3,
+    "backoff_base": 0.4,
+    "backoff_cap": 6.0,
+    "jitter_ratio": 0.3
+  },
+  "breaker": {
+    "failure_threshold": 4,
+    "recovery_timeout": 30.0,
+    "half_open_successes": 2
+  },
+  "validation": {
+    "max_price_age_seconds": 120.0,
+    "outlier_pct_change": 25.0,
+    "cross_source_tolerance_pct": 2.0,
+    "max_bid_ask_spread_pct": 5.0
+  },
+  "scheduler": {
+    "ui_refresh_interval": 1.0,
+    "crypto_rest_interval": 30.0,
+    "forex_rest_interval": 30.0,
+    "aggregator_interval": 1.0,
+    "stale_after_seconds": 45.0,
+    "dead_after_seconds": 180.0
+  },
+  "log_level": "INFO"
+}
